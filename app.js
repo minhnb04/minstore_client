@@ -8,6 +8,12 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const mobilesRouter = require('./routes/mobiles');
+const tabletsRouter = require('./routes/tablets');
+const accessoriesRouter = require('./routes/accessories');
+const aboutRouter = require('./routes/about');
+const contactRouter = require('./routes/contact');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +35,13 @@ app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/mobiles', mobilesRouter);
+app.use('/tablets', tabletsRouter);
+app.use('/accessories', accessoriesRouter);
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
+
+
 
 
 app.listen(port, () => {
