@@ -58,7 +58,7 @@
                         </div>
                         <div class="detail-box">
                             <h6>
-                                Smartwatch
+                                Phone Brand
                             </h6>
                             <h6>
                                 Price:
@@ -76,9 +76,10 @@
                 </div>
             </div>
 
-            <% for (var i=0;i<6; i++){%>
-                <%- include('partial/mobiles/mobile-item') %>
-            <% } %>
+            <% data.forEach(function (product,i) {%>
+                <%- include('partial/mobiles/mobile-item', {product: product, i: i}) %>
+            <%})%>
+
 
 <!--            <div class="col-sm-6 col-xl-3">-->
 <!--                <div class="box">-->

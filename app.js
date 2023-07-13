@@ -41,9 +41,6 @@ app.use('/accessories', accessoriesRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 
-
-
-
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
