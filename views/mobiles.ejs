@@ -15,19 +15,7 @@
 
     <title>Mobiles</title>
 
-
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css" />
-    <!--owl slider stylesheet -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-    <!-- font awesome style -->
-    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-    <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!-- responsive style -->
-    <link href="/stylesheets/responsive.css" rel="stylesheet" />
+    <%- include('partial/styles.ejs') %>
 
 </head>
 
@@ -44,169 +32,29 @@
 
 <section class="shop_section layout_padding">
     <div class="container">
-        <div class="heading_container heading_center">
+        <div class="heading_container heading_center d-flex flex-row justify-content-between">
+            <div>
+
+            </div>
             <h2>
                 Mobiles List
             </h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6 ">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="images/w1.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Phone Brand
-                            </h6>
-                            <h6>
-                                Price:
-                                <span>
-                    $300
-                  </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                <span>
-                  Featured
-                </span>
-                        </div>
-                    </a>
-                </div>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Soft by
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item active" href="/mobiles/soft/outstanding">Outstanding</a></li>
+                    <li><a class="dropdown-item" href="/mobiles/soft/pricehightolow">Price high to low</a></li>
+                    <li><a class="dropdown-item" href="/mobiles/soft/pricelowtohigh">Price low to high</a></li>
+                    <li><a class="dropdown-item" href="/mobiles/soft/alphabet">Alphabet</a></li>
+
+                </ul>
             </div>
 
-            <% data.forEach(function (product,i) {%>
-                <%- include('partial/mobiles/mobile-item', {product: product, i: i}) %>
-            <%})%>
-
-
-<!--            <div class="col-sm-6 col-xl-3">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w2.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Smartwatch-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $125-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  New-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6 col-xl-3">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w3.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Smartwatch-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $110-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  New-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6 col-xl-3">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w4.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Smartwatch-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $145-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  New-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6 col-xl-3">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w5.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Smartwatch-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $195-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  New-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6  col-xl-3">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w6.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Smartwatch-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $170-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  New-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6 col-xl-3">-->
+        </div>
+        <div class="row">
+<!--            <div class="col-md-6 ">-->
 <!--                <div class="box">-->
 <!--                    <a href="">-->
 <!--                        <div class="img-box">-->
@@ -214,23 +62,28 @@
 <!--                        </div>-->
 <!--                        <div class="detail-box">-->
 <!--                            <h6>-->
-<!--                                Smartwatch-->
+<!--                                Phone Brand-->
 <!--                            </h6>-->
 <!--                            <h6>-->
 <!--                                Price:-->
 <!--                                <span>-->
-<!--                    $230-->
+<!--                    $300-->
 <!--                  </span>-->
 <!--                            </h6>-->
 <!--                        </div>-->
 <!--                        <div class="new">-->
 <!--                <span>-->
-<!--                  New-->
+<!--                  Featured-->
 <!--                </span>-->
 <!--                        </div>-->
 <!--                    </a>-->
 <!--                </div>-->
 <!--            </div>-->
+
+            <% data.forEach(function (product,i) {%>
+                <%- include('partial/mobiles/mobile-item', {product: product, i: i}) %>
+            <%})%>
+
         </div>
         <div class="btn-box">
             <a href="">
@@ -247,6 +100,10 @@
 <!-- footer section -->
 
 <%- include('partial/scripts.ejs'); %>
+
+<script>
+
+</script>
 
 </body>
 
