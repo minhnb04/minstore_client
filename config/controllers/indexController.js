@@ -7,7 +7,7 @@ class IndexController{
 
     index(req, res){
 
-        axios.get('http://localhost:8080/productCilent/getProducts')
+        axios.get('https://minstore-admin.onrender.com/productCilent/getProducts')
             .then(response => {
                 const data = response.data;
                 res.render('index',{ title: 'MinStore', data: data , userlogin: res.userlogin })
@@ -26,7 +26,7 @@ class IndexController{
         const password = req.body.password
 
         try {
-            const response = await axios.post('http://localhost:8080/authCilent/login', {username, password});
+            const response = await axios.post('https://minstore-admin.onrender.com/authCilent/login', {username, password});
             console.log(response)
             if(response.data.tokenMember){
                 const tokenMember = response.data.tokenMember;
@@ -58,7 +58,7 @@ class IndexController{
                 res.userlogin = null
                 next()
             }else {
-                const response = await axios.post('http://localhost:8080/authCilent/checklogin', {tokenMember})
+                const response = await axios.post('https://minstore-admin.onrender.com/authCilent/checklogin', {tokenMember})
                 if(response.data.userlogin){
                     const userlogin = response.data.userlogin;
                     res.userlogin = userlogin
@@ -69,8 +69,6 @@ class IndexController{
         catch (error) {
             console.log(error)
         }
-        
-        
 
     }
 

@@ -4,7 +4,7 @@ class MobilesController{
 
     index(req, res){
 
-        axios.get('http://localhost:8080/productCilent/getMobiles')
+        axios.get('https://minstore-admin.onrender.com/productCilent/getMobiles')
             .then(response => {
                 const data = response.data;
                 res.render('mobiles',{ title: 'Mobiles', data: data , userlogin: res.userlogin })
@@ -15,7 +15,7 @@ class MobilesController{
     }
 
     soft(req, res, next) {
-        axios.get('http://localhost:8080/productCilent/getMobiles')
+        axios.get('https://minstore-admin.onrender.com/productCilent/getMobiles')
             .then(response => {
                 // Nhận dữ liệu JSON từ phản hồi
                 const data = response.data;
