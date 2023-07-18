@@ -18,7 +18,7 @@
                     </li>
                     <li id="categories_dropdown" class="nav-item">
                         <div class="dropdown">
-                            <button class="nav-link btn dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 CATEGORIES
                             </button>
 
@@ -47,8 +47,17 @@
                     <a href="">
                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
                     </a>
-                    <a href="">
+                    <a href="/showlogin">
                         <i class="fa fa-user" aria-hidden="true"></i>
+
+                        <span>
+                            <% if(userlogin){ %>
+                                <%= userlogin.fullname %>
+                            <% }else {%>
+                                    <%= 'Login' %>
+                            <% } %>
+
+                        </span>
                     </a>
                 </div>
             </div>

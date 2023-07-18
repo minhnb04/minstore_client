@@ -5,6 +5,8 @@ const path = require('path');
 const logger = require('morgan');
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -22,6 +24,8 @@ app.set('view engine', 'ejs');
 //bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(cookieParser())
 
 //setup đường dẫn file tĩnh
 app.use(express.static(path.join(__dirname, 'public')));

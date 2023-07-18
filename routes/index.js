@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const homeController = require('../config/controllers/homeController')
+const indexController = require('../config/controllers/indexController')
 
 /* GET home page. */
-router.get('/', homeController.index)
+router.get('/',indexController.checklogin, indexController.index)
+
+router.get('/showlogin', indexController.showlogin)
+
+router.post('/login', indexController.login)
+
+router.get('/checklogin', indexController.checklogin)
 
 
  

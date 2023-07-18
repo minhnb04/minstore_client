@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router();
 
-
+const indexController = require('../config/controllers/indexController')
 const mobilesController = require('../config/controllers/mobilesController')
 
-router.get('/', mobilesController.index)
+router.get('/',indexController.checklogin, mobilesController.index)
 
-router.get('/soft/:softmethod', mobilesController.soft)
+router.get('/soft/:softmethod',indexController.checklogin, mobilesController.soft)
 
 
 
