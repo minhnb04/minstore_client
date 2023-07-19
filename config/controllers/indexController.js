@@ -69,7 +69,16 @@ class IndexController{
         catch (error) {
             console.log(error)
         }
+    }
 
+    async logout(req, res, next) {
+        try{
+            res.clearCookie('tokenMember');
+            res.redirect(req.headers.referer)
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 
 }

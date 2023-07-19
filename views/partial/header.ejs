@@ -47,18 +47,25 @@
                     <a href="">
                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
                     </a>
-                    <a href="/showlogin">
-                        <i class="fa fa-user" aria-hidden="true"></i>
 
-                        <span>
-                            <% if(userlogin){ %>
-                                <%= userlogin.fullname %>
-                            <% }else {%>
-                                    <%= 'Login' %>
-                            <% } %>
+                    <% if(userlogin){ %>
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="/showlogin" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span><%= userlogin.fullname %></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Information</a>
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </div>
+                    <% }else {%>
+                        <a href="/showlogin">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span><%= 'Login' %></span>
+                        </a>
+                    <% } %>
 
-                        </span>
-                    </a>
                 </div>
             </div>
         </nav>

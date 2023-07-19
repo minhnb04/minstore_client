@@ -6,4 +6,7 @@ const accessoriesController = require('../config/controllers/accessoriesControll
 
 router.get('/',indexController.checklogin, accessoriesController.index)
 
+router.get('/soft/:softmethod',indexController.checklogin, accessoriesController.soft)
+
+
 module.exports = router;

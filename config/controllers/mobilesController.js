@@ -17,11 +17,8 @@ class MobilesController{
     soft(req, res, next) {
         axios.get('https://minstore-admin.onrender.com/productCilent/getMobiles')
             .then(response => {
-                // Nhận dữ liệu JSON từ phản hồi
                 const data = response.data;
-
                 if (req.params.softmethod == 'outstanding') {
-
                     res.render('mobiles', {title: 'Mobiles', data: data, userlogin: res.userlogin})
                 } else if (req.params.softmethod == 'pricehightolow') {
                     data.sort((a, b) => b.price - a.price);
@@ -35,12 +32,10 @@ class MobilesController{
                 } else {
                     res.json('softmethod sai!!!')
                 }
-
             })
             .catch(error => {
                 res.render('error', {title: 'Error', error: error})
             });
-
     }
 }
 

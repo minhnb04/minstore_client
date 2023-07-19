@@ -33,14 +33,12 @@
 <section class="shop_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center d-flex flex-row justify-content-between">
-            <div>
-
-            </div>
+            <div></div>
             <h2>
                 Mobiles List
             </h2>
             <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Soft by
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
@@ -54,31 +52,6 @@
 
         </div>
         <div class="row">
-<!--            <div class="col-md-6 ">-->
-<!--                <div class="box">-->
-<!--                    <a href="">-->
-<!--                        <div class="img-box">-->
-<!--                            <img src="images/w1.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="detail-box">-->
-<!--                            <h6>-->
-<!--                                Phone Brand-->
-<!--                            </h6>-->
-<!--                            <h6>-->
-<!--                                Price:-->
-<!--                                <span>-->
-<!--                    $300-->
-<!--                  </span>-->
-<!--                            </h6>-->
-<!--                        </div>-->
-<!--                        <div class="new">-->
-<!--                <span>-->
-<!--                  Featured-->
-<!--                </span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
 
             <% data.forEach(function (product,i) {%>
                 <%- include('partial/mobiles/mobile-item', {product: product, i: i}) %>
